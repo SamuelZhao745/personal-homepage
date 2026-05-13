@@ -2,6 +2,9 @@ const canvas = document.querySelector("#signal-canvas");
 const ctx = canvas.getContext("2d");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const backToTop = document.querySelector(".back-to-top");
+const siteHeader = document.querySelector(".site-header");
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
 
 let width = 0;
 let height = 0;
@@ -83,3 +86,37 @@ backToTop.addEventListener("click", () => {
 
 window.addEventListener("scroll", updateBackToTop, { passive: true });
 updateBackToTop();
+
+function closeNavigation() {
+  siteHeader.classList.remove("is-nav-open");
+  navToggle.classList.remove("is-open");
+  navLinks.classList.remove("is-open");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "打开导航");
+}
+
+function toggleNavigation() {
+  const isOpen = navToggle.classList.toggle("is-open");
+  siteHeader.classList.toggle("is-nav-open", isOpen);
+  navLinks.classList.toggle("is-open", isOpen);
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute("aria-label", isOpen ? "关闭导航" : "打开导航");
+}
+
+navToggle.addEventListener("click", toggleNavigation);
+
+navLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeNavigation);
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeNavigation();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 860) {
+    closeNavigation();
+  }
+});
