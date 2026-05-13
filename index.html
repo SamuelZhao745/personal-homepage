@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel | AI Creator</title>
+  <meta name="description" content="一个面向 AI、代码与个人创造的个人品牌主页。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="signal-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回首页">
+      <span class="brand-symbol" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img">
+          <defs>
+            <linearGradient id="brand-glow" x1="12" y1="8" x2="52" y2="58" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#38e8ff" />
+              <stop offset="0.48" stop-color="#b8ff4d" />
+              <stop offset="1" stop-color="#ff6f61" />
+            </linearGradient>
+          </defs>
+          <path class="brand-symbol__halo" d="M18 9h28c6 0 9 3 9 9v28c0 6-3 9-9 9H18c-6 0-9-3-9-9V18c0-6 3-9 9-9Z" />
+          <path class="brand-symbol__line" d="M42 19H27.5C22.2 19 19 21.9 19 26.2c0 4.5 3.4 6.5 8.7 7.7l7.2 1.6c4.9 1.1 7.1 2.9 7.1 6.4 0 4.6-3.9 7.1-10.2 7.1H20" />
+          <path class="brand-symbol__spark" d="M44.5 14.5h5v5M17 44.5h-4.5V40" />
+        </svg>
+      </span>
+      <span class="brand-word">Samuel</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#focus">方向</a>
+      <a href="#work">作品</a>
+      <a href="#about">关于</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">AI Builder / Creative Technologist</p>
+        <h1>用 AI 和代码，把想法做成可以被看见的东西。</h1>
+        <p class="hero-text">
+          我正在搭建自己的数字工作台：学习、实验、创作、发布。这里会记录我如何用 AI 编程、自动化工具和产品原型，把日常灵感变成真实作品。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">查看作品</a>
+          <a class="button ghost" href="#contact">开始交流</a>
+        </div>
+      </div>
+
+      <figure class="hero-visual" aria-label="AI 创作控制台视觉图">
+        <img src="assets/ai-hero-console.png" alt="未来感 AI 创作控制台">
+        <figcaption>
+          <span>AI CREATION SYSTEM</span>
+          <strong>Ideas become visible</strong>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="focus" class="focus section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Focus</p>
+        <h2>我正在探索的三个方向</h2>
+      </div>
+      <div class="focus-grid">
+        <article class="feature-card">
+          <span class="card-index">01</span>
+          <h3>AI 编程工作流</h3>
+          <p>把想法拆成任务，用 AI 协作完成调研、设计、开发和迭代，让个人创造更快进入真实世界。</p>
+        </article>
+        <article class="feature-card">
+          <span class="card-index">02</span>
+          <h3>个人产品原型</h3>
+          <p>从小工具、网页应用到自动化脚本，关注那些能真正节省时间、放大能力的微型产品。</p>
+        </article>
+        <article class="feature-card">
+          <span class="card-index">03</span>
+          <h3>公开学习记录</h3>
+          <p>把学习过程、失败经验和阶段性成果沉淀下来，形成可以被回看、复用和交流的内容资产。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="work section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Selected Work</p>
+        <h2>精选项目与创作记录</h2>
+      </div>
+      <div class="work-list">
+        <article class="work-item">
+          <div>
+            <p class="work-kicker">Homepage</p>
+            <h3>个人品牌主页 v1</h3>
+          </div>
+          <p>从定位、视觉、内容结构开始，建立一个可以持续迭代的个人在线身份。</p>
+          <span>2026</span>
+        </article>
+        <article class="work-item">
+          <div>
+            <p class="work-kicker">Prototype</p>
+            <h3>AI 辅助开发实验</h3>
+          </div>
+          <p>记录用 AI 完成网页、工具、自动化流程的实践过程，逐步形成自己的工作方法。</p>
+          <span>进行中</span>
+        </article>
+        <article class="work-item">
+          <div>
+            <p class="work-kicker">Notes</p>
+            <h3>创造日志</h3>
+          </div>
+          <p>把每天的小发现、小问题和小成果写下来，让作品不是突然出现，而是清晰生长。</p>
+          <span>即将开放</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about section-shell">
+      <div class="about-copy">
+        <p class="eyebrow">About</p>
+        <h2>我相信个人也可以拥有自己的小型创作系统。</h2>
+      </div>
+      <div class="about-text">
+        <p>
+          这个主页不是一张静态简历，而是一块持续更新的个人创作界面。
+        </p>
+        <p>
+          我会在这里沉淀项目、文章、工具和案例，展示我如何观察问题、组织想法，并把 AI、设计和代码转化成真实作品。
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-shell">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>如果你也在研究 AI、产品或个人创造，我们可以聊聊。</h2>
+      </div>
+      <div class="contact-actions">
+        <a class="button primary" href="mailto:hello@example.com">hello@example.com</a>
+        <a class="button ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Samuel © 2026</span>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="回到顶部">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
