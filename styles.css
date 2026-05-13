@@ -208,12 +208,18 @@ a {
 }
 
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
   gap: 56px;
   align-items: center;
   min-height: calc(100vh - 74px);
   padding: 58px 0 92px;
+}
+
+.hero::before,
+.hero::after {
+  display: none;
 }
 
 .eyebrow {
@@ -598,6 +604,35 @@ h3 {
     gap: 34px;
     padding-top: 38px;
     padding-bottom: 70px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(244, 247, 239, 0.12);
+  }
+
+  .hero::before,
+  .hero::after {
+    position: absolute;
+    inset: 0;
+    display: block;
+    content: "";
+    pointer-events: none;
+  }
+
+  .hero::before {
+    z-index: -2;
+    background:
+      linear-gradient(90deg, rgba(6, 7, 6, 0.98) 0%, rgba(6, 7, 6, 0.78) 56%, rgba(6, 7, 6, 0.42) 100%),
+      linear-gradient(180deg, rgba(6, 7, 6, 0.72) 0%, rgba(6, 7, 6, 0.18) 42%, rgba(6, 7, 6, 0.86) 100%),
+      url("assets/ai-hero-console.png");
+    background-position: 57% 36%;
+    background-size: cover;
+    opacity: 0.72;
+  }
+
+  .hero::after {
+    z-index: -1;
+    background:
+      radial-gradient(circle at 76% 30%, rgba(184, 255, 77, 0.28), transparent 15rem),
+      linear-gradient(90deg, rgba(56, 232, 255, 0.1), transparent 58%);
   }
 
   h1 {
@@ -614,9 +649,8 @@ h3 {
     line-height: 1.78;
   }
 
-  .hero-visual,
-  .hero-visual img {
-    min-height: 460px;
+  .hero-visual {
+    display: none;
   }
 
   .focus-grid {
@@ -670,6 +704,16 @@ h3 {
     padding-bottom: 56px;
   }
 
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(6, 7, 6, 0.9) 0%, rgba(6, 7, 6, 0.66) 38%, rgba(6, 7, 6, 0.94) 100%),
+      linear-gradient(90deg, rgba(6, 7, 6, 0.96) 0%, rgba(6, 7, 6, 0.62) 68%, rgba(6, 7, 6, 0.38) 100%),
+      url("assets/ai-hero-console.png");
+    background-position: 54% 34%;
+    background-size: cover;
+    opacity: 0.76;
+  }
+
   h1 {
     font-size: 44px;
     line-height: 1.04;
@@ -690,22 +734,6 @@ h3 {
 
   .button {
     width: 100%;
-  }
-
-  .hero-visual,
-  .hero-visual img {
-    min-height: 360px;
-  }
-
-  .hero-visual figcaption {
-    display: grid;
-    gap: 8px;
-    align-items: start;
-  }
-
-  .hero-visual strong {
-    max-width: none;
-    text-align: left;
   }
 
   .focus,
